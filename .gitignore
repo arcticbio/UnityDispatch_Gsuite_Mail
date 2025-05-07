@@ -1,0 +1,26 @@
+ # Byte-compiled / cache
+__pycache__/
+*.py[cod]
+db.sqlite3
+*.log
+web.config
+
+# Virtual environment
+DispatchMail/
+invoice_files/
+
+# Environment variables
+.env
+*.apps.googleusercontent.com.json
+token.json
+
+# VS Code settings
+.vscode/
+
+# Transcient data
+logs/
+
+# Environmental objects
+Reference/Archive/
+win-acme.v2.2.9.1701.x64.pluggable/
+nssm-2.24/
