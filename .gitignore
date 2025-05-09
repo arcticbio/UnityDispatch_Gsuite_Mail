@@ -19,6 +19,7 @@ token.json
 
 # Transcient data
 logs/
+email_script_log.txt
 
 # Environmental objects
 Reference/Archive/

@@ -1,7 +1,7 @@
 # PowerShell script to run the Python email script
 $scriptPath = "C:\inetpub\flaskapps\justlawns_mail"
-$pythonScript = "gmail_test_send_3.py"
-$venvActivate = ".\Scripts\Activate.ps1"
+$pythonScript = "send_invoices_google_oauth.py"
+$venvActivate = ".\DispatchMail\Scripts\Activate.ps1"
 $logFile = "C:\inetpub\flaskapps\justlawns_mail\email_script_log.txt"
 
 try {

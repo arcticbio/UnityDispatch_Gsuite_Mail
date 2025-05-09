@@ -55,7 +55,7 @@ def get_customers():
                 , c.num
                 , c.bill_name
                 , c.greeting
-                , 'dredmond@tenagolabs.com' email --c.email
+                , 'billing_test@tenagolabs.com' email --c.email
                 , SUM(inv_total) - SUM(inv_paid) AS BalanceDue
             FROM [JUSTLAWNS_CLIP]...[INV_HEAD] ih
                 INNER JOIN [JUSTLAWNS_CLIP]...[customer] c ON ih.inv_cu_id = c.cu_id
@@ -94,7 +94,6 @@ def get_gmail_service():
 def create_message(to, subject, message_text, file):
     msg = MIMEMultipart()
     msg['to'] = to
-#    msg['bcc'] = 'dredmond@tenagolabs.com'  # Add BCC recipient
     msg['From'] = os.getenv("GMAIL_USER")
     msg['subject'] = subject
     msg.attach(MIMEText(message_text, 'plain'))
@@ -139,10 +138,10 @@ def main():
             try:
                 service.users().messages().send(userId='me', body=message).execute()
                 logging.info(f'Email sent to {email} for cu_id {cu_id}')
-                print(f'Email sent to {email}')
+                print(f'Email sent to {email} for cu_id {cu_id}', flush=True)
             except Exception as e:
                 logging.error(f'Failed to send email to {email} for cu_id {cu_id}: {e}')
-                print(f'Failed to send email to {email}: {e}')
+                print(f'Failed to send email to {email}: {e}', flush=True)
 
 if __name__ == '__main__':
     main()
